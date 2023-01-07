@@ -8,9 +8,31 @@ One could say this program is nothing else than a strongly typed shell script.
 
 Tested with an Elgato Key Light Air.
 
+## Installation
+
+```shell
+# Puts `elc` binary into $HOME/bin
+make install
+
+
+# Build and run from current directory
+make elgato-light-controller
+./elgato-light-controller
+```
+
+## Configuration
+
+There's only one important configuration value – the light's URL. There are two ways to provide the URL to the program:
+
+1. Command-line option: `elgato-light-controller --url=http://keylight.local:9123`
+2. Environment variable `ELGATO_LIGHT_URL` (see "Usage" below)
+
 ## Usage
 
 ```shell
+# Store the light's URL into an environment variable
+% export ELGATO_LIGHT_URL=http://keylight.local:9123
+
 # Ask Keylight for information about itself
 % elc
 Product Name          : Elgato Key Light Air
