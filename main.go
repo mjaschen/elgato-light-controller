@@ -181,6 +181,9 @@ func light_brightness(brightness int) *resty.Response {
 }
 
 func light_color(temperature int) *resty.Response {
+	if temperature >= 29 && temperature <= 70 {
+		temperature *= 100
+	}
 	if temperature < 2900 || temperature > 7000 {
 		fmt.Println("Color temperature out of range (valid values: 2900-7000)")
 		os.Exit(1)

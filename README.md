@@ -68,6 +68,9 @@ Color Temperature : 5525 K
 % elc temperature 5500
 % elc t 3300
 
+# Specifying color temperature in short version (value/100)
+% elc temperature 55
+
 # Get status in JSON format
 % elc --format=json status
 {"state":false,"brightness":40,"temperature":5525}
